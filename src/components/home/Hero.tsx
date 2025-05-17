@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
               <img 
                 src="/logo.jpeg" 
-                alt="DIVISH Accessories collection" 
+                // alt="DIVISH Accessories collection" 
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary-600/30 to-transparent mix-blend-multiply"></div>
