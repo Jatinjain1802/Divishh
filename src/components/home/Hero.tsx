@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
           >
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="https://images.pexels.com/photos/1580562/pexels-photo-1580562.jpeg" 
+                src="/logo.jpeg" 
                 alt="DIVISH Accessories collection" 
                 className="w-full h-full object-cover"
               />
