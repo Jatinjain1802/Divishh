@@ -10,18 +10,18 @@ import { useCart } from '../../contexts/CartContext';
 import { CustomerDetails } from '../../types';
 
 // Initialize EmailJS ONCE at the top-level (outside the component)
-emailjs.init('v0qE4Ddl7amzSjYsC');
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 const InquiryForm: React.FC = () => {
   const { cartItems, cartTotal, clearCart } = useCart();
   const navigate = useNavigate();
-  
-  const { 
-    register, 
-    handleSubmit, 
-    formState: { errors, isSubmitting } 
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting }
   } = useForm<CustomerDetails>();
-  
+
   const onSubmit = async (data: CustomerDetails) => {
     try {
       // Prepare cart items for email
@@ -45,8 +45,8 @@ const InquiryForm: React.FC = () => {
 
       // Send email using EmailJS
       await emailjs.send(
-        'service_w23k9de',
-        'template_mkeij1g',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams
       );
 
@@ -58,17 +58,17 @@ const InquiryForm: React.FC = () => {
       toast.error('Failed to submit inquiry. Please try again.');
     }
   };
-  
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="bg-primary-50 p-4 rounded-md mb-6">
         <h3 className="text-primary-800 font-medium mb-2">Important Information</h3>
         <p className="text-sm text-primary-700">
-          Please fill out the form below to submit your inquiry. We'll respond with payment options and 
+          Please fill out the form below to submit your inquiry. We'll respond with payment options and
           further details about your order within 24 hours.
         </p>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Input
           id="fullName"
@@ -77,11 +77,11 @@ const InquiryForm: React.FC = () => {
           placeholder="Enter your full name"
           required
           error={errors.fullName?.message}
-          {...register('fullName', { 
-            required: 'Full name is required' 
+          {...register('fullName', {
+            required: 'Full name is required'
           })}
         />
-        
+
         <Input
           id="email"
           label="Email Address"
@@ -89,7 +89,7 @@ const InquiryForm: React.FC = () => {
           placeholder="Enter your email address"
           required
           error={errors.email?.message}
-          {...register('email', { 
+          {...register('email', {
             required: 'Email is required',
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -97,7 +97,7 @@ const InquiryForm: React.FC = () => {
             }
           })}
         />
-        
+
         <Input
           id="phone"
           label="Phone Number"
@@ -105,7 +105,7 @@ const InquiryForm: React.FC = () => {
           placeholder="Enter your phone number"
           required
           error={errors.phone?.message}
-          {...register('phone', { 
+          {...register('phone', {
             required: 'Phone number is required',
             pattern: {
               value: /^\+?[0-9\s\-()]+$/,
@@ -113,7 +113,7 @@ const InquiryForm: React.FC = () => {
             }
           })}
         />
-        
+
         <Input
           id="address"
           label="Shipping Address"
@@ -121,12 +121,12 @@ const InquiryForm: React.FC = () => {
           placeholder="Enter your shipping address"
           required
           error={errors.address?.message}
-          {...register('address', { 
-            required: 'Shipping address is required' 
+          {...register('address', {
+            required: 'Shipping address is required'
           })}
         />
       </div>
-      
+
       <Textarea
         id="specialInstructions"
         label="Special Instructions"
@@ -134,7 +134,7 @@ const InquiryForm: React.FC = () => {
         error={errors.specialInstructions?.message}
         {...register('specialInstructions')}
       />
-      
+
       <div className="border-t border-gray-200 pt-6 mt-6">
         <Button
           type="submit"

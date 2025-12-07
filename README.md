@@ -1,231 +1,98 @@
-# Divishh
+# Divishh - Personalized Accessories E-commerce
 
-> A concise, well-documented TypeScript project scaffold — tune this description to explain what Divishh actually does.
+Divishh is a modern, React-based e-commerce platform specializing in personalized accessories. Unlike traditional e-commerce sites, Divishh features a unique **Order Inquiry System** that connects customers directly with the business owner via email for a personalized shopping experience.
 
-Status: Work in progress — TypeScript powered (≈96% of the codebase).
+## ✨ Features
 
----
+- **Personalized Product Catalog**: Browse a variety of customizable accessories including bracelets, necklaces, earrings, and stationery.
+- **Cart Management**: Add items to a cart with persistent local storage support.
+- **Direct Order Inquiry**: Instead of a standard checkout, users submit an inquiry form. This sends a detailed email to the business owner with:
+    - Customer contact details.
+    - Shipping address.
+    - Full list of cart items (products, quantities, prices).
+    - Calculated total amount.
+- **Responsive Design**: Fully responsive UI built with Tailwind CSS for mobile and desktop.
+- **Interactive UI**: Smooth animations using Framer Motion.
 
-## Table of Contents
+## 🛠 Tech Stack
 
-- [About the Project](#about-the-project)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running locally](#running-locally)
-- [Environment](#environment)
-- [Available Scripts](#available-scripts)
-- [Usage](#usage)
-- [Testing](#testing)
-- [Linting & Formatting](#linting--formatting)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
+- **Frontend**: [React](https://reactjs.org/) (TypeScript)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Routing**: [React Router](https://reactrouter.com/)
+- **Forms**: [React Hook Form](https://react-hook-form.com/)
+- **Email Service**: [EmailJS](https://www.emailjs.com/) - Handles sending order inquiries directly to the owner.
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Toast Notifications**: [React Hot Toast](https://react-hot-toast.com/)
 
----
+## 🚀 Getting Started
 
-## About the Project
-
-Divishh is a TypeScript-first repository. Replace this paragraph with a short, clear description of what Divishh does, who it is for, and the main problem it solves. Add links to any hosted demos or documentation if available.
-
-Example:
-- "Divishh is a utility library for X"
-- "Divishh is a web service for Y"
-
----
-
-## Features
-
-- TypeScript-first codebase
-- Clear dev scripts for build, dev, lint, and test
-- Modular architecture and typed public APIs
-- (Add project-specific features here)
-
----
-
-## Tech Stack
-
-- Runtime: Node.js
-- Language: TypeScript
-- Tooling: ESBuild / ts-node / ts-jest / ESLint / Prettier (customize as used)
-- Package manager: npm or yarn
-
-(Adjust to match the repo's actual choices and versions.)
-
----
-
-## Getting Started
+Follow these instructions to get the project up and running on your local machine.
 
 ### Prerequisites
 
-- Node.js (recommend LTS — e.g., 18.x or 20.x)
-- npm (>= 8) or yarn
-- Git (for cloning)
+- Node.js (v18.0.0 or higher recommended)
+- npm or yarn
 
 ### Installation
 
-Clone the repo and install dependencies:
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/Jatinjain1802/Divishh.git
+    cd Divishh
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+### Running Locally
+
+Start the development server:
 
 ```bash
-git clone https://github.com/Jatinjain1802/Divishh.git
-cd Divishh
-# using npm
-npm install
-# or using yarn
-yarn
-```
-
-### Running locally
-
-Start the development environment (example):
-
-```bash
-# development (watch)
 npm run dev
-# build for production
+```
+
+The application will be available at `http://localhost:5173`.
+
+### Building for Production
+
+To create a production build:
+
+```bash
 npm run build
-# run production build
-npm start
 ```
 
-Customize the commands above to match your actual scripts in package.json.
+The built files will be in the `dist` directory.
 
----
-
-## Environment
-
-Copy the example environment file and fill in the values:
-
-```bash
-cp .env.example .env
-# then edit .env
-```
-
-Document the important environment variables here (API keys, DB URLs, etc.) and their purpose.
-
----
-
-## Available Scripts
-
-Below are suggested scripts — ensure these match package.json or adjust accordingly.
-
-- `npm run dev` — run in development mode with hot reload
-- `npm run build` — compile TypeScript to JavaScript
-- `npm start` — run the compiled app (production)
-- `npm test` — run tests
-- `npm run lint` — run ESLint
-- `npm run format` — run Prettier
-- `npm run typecheck` — run TypeScript compiler checks
-
-Example package.json scripts block:
-
-```json
-{
-  "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "build": "tsc -p tsconfig.json",
-    "start": "node dist/index.js",
-    "test": "jest",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "format": "prettier --write 'src/**/*.{ts,tsx,js,json,md}'",
-    "typecheck": "tsc --noEmit"
-  }
-}
-```
-
----
-
-## Usage
-
-Show simple examples of how to use the project. If it is a library, show code samples; if it is a service, show HTTP calls or CLI examples.
-
-Example (library):
-
-```ts
-import { doThing } from 'divishh';
-
-const result = doThing({ foo: 'bar' });
-console.log(result);
-```
-
-Example (HTTP):
-
-```bash
-curl -X POST 'http://localhost:3000/api/v1/action' \
-  -H 'Content-Type: application/json' \
-  -d '{"key":"value"}'
-```
-
----
-
-## Testing
-
-Describe how to run tests and any testing strategy:
-
-```bash
-npm test
-# for coverage
-npm run test -- --coverage
-```
-
-Include notes about integration tests, end-to-end tests, or CI jobs.
-
----
-
-## Linting & Formatting
-
-Run linters and formatters:
-
-```bash
-npm run lint
-npm run format
-```
-
-Add pre-commit hooks (Husky) and a recommended configuration if used.
-
----
-
-## Contributing
-
-Contributions are welcome.
-
-- Fork the repository
-- Create a feature branch: `git checkout -b feat/your-feature`
-- Commit your changes: `git commit -m "feat: short description"`
-- Push to your branch: `git push origin feat/your-feature`
-- Open a Pull Request describing the change
-
-Add a CONTRIBUTING.md with more details if you have project-specific requirements (commit message conventions, review rules, PR template).
-
----
-
-## License
-
-Specify the license used by the project (e.g., MIT). If not yet chosen, add one and update this section.
-
-Example:
+## 📂 Project Structure
 
 ```
-MIT © Jatinjain1802
+src/
+├── components/      # Reusable UI components
+│   ├── common/      # Header, Footer, Layout components
+│   ├── products/    # Product cards and lists
+│   ├── cart/        # Cart drawer and items
+│   ├── inquiry/     # Inquiry form with EmailJS logic
+│   └── ui/          # Basic UI elements (Buttons, Inputs)
+├── contexts/        # React Context (Cart state management)
+├── data/            # Static product data
+├── layouts/         # Page layouts
+├── pages/           # Application pages (Home, Cart, Contact, etc.)
+├── types/           # TypeScript interfaces
+└── utils/           # Helper functions
 ```
 
----
+## 📨 EmailJS Integration
 
-## Contact
+The project uses **EmailJS** to handle order inquiries.
 
-Project maintained by Jatinjain1802.
-- GitHub: https://github.com/Jatinjain1802
+- **File**: `src/components/inquiry/InquiryForm.tsx`
+- **Functionality**: When a user submits the inquiry form, the `onSubmit` function compiles the cart details and customer information into a template and sends it via EmailJS to the configured email address (`jjain0740@gmail.com`).
+- **Configuration**: The project is pre-configured with a Public Key. Ensure you have the correct Service ID and Template ID if you modify this feature.
 
-Include other contact links (email, website) if desired.
+## 📄 License
 
----
-
-## Acknowledgements
-
-- List libraries, tools, or people that deserve credit.
-- Templates, logos, or design help.
-
----
+This project is licensed under the MIT License.
