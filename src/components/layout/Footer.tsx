@@ -116,12 +116,12 @@ const Footer: React.FC = () => {
                 <span className="text-gray-600">Indore,MP</span>
               </li>
               <li className="flex items-center">
-            
-                
+
+
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="text-primary-500 mr-2 flex-shrink-0" />
-                <span className="text-gray-600">saurashtrydivyanshi@gmail.com</span>
+                <span className="text-gray-600">xyz@gmail.com</span>
               </li>
             </ul>
           </div>
